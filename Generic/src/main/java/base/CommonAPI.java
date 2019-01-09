@@ -11,14 +11,14 @@ import java.util.concurrent.TimeUnit;
 public class CommonAPI {
     public WebDriver driver = null;
 
-    @Parameters({"url"})
+   // @Parameters({"url"})
     @BeforeMethod
     public void setUP(String url){
-        System.setProperty("webdriver.chrome.driver","C:\\Users\\Zack\\IdeaProjects\\DreamTeamProject\\Drivers\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver","/Users/marwaomar/IdeaProjects/Webproject/Drivers");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.navigate().to(url);
+        driver.navigate().to("https://www.amazon.com");
     }
     @AfterMethod
     public void closeBrowser(){
